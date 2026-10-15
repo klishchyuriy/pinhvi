@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Дитячий садок «Пінгві» — Київ, Теремки, Park Land</title>
+<meta name="description" content="Приватний дитячий садок повного дня на Теремках, ЖК Park Land. Дві групи від 1 року 8 місяців, English, музика, здорове харчування, укриття, компенсація від міста.">
+<meta property="og:title" content="Дитячий садок «Пінгві»">
+<meta property="og:description" content="Тут малюки зростають, творять і дружать. Теремки, ЖК Park Land.">
+<meta property="og:image" content="assets/logo.png">
+<meta name="theme-color" content="#C7E7F6">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&amp;family=Montserrat:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F4F9FD}
+a{color:#1B5E96}a:hover{color:#0F2B46}
+@property --pv-n{syntax:'<integer>';initial-value:0;inherits:false}
+@property --pv-a{syntax:'<angle>';initial-value:0deg;inherits:false}
+@keyframes pv-float{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-20px) rotate(2deg)}}
+@keyframes pv-spin{to{transform:rotate(360deg)}}
+@keyframes pv-snow{0%{transform:translate3d(0,-40px,0) rotate(0);opacity:0}12%{opacity:1}88%{opacity:1}100%{transform:translate3d(60px,900px,0) rotate(260deg);opacity:0}}
+@keyframes pv-kin{to{transform:translateX(-50%)}}
+.pv-kin{display:flex;width:max-content;animation:pv-kin 36s linear infinite}
+.pv-kin-rev{display:flex;width:max-content;animation:pv-kin 44s linear infinite reverse}
+@keyframes pv-orbit{to{transform:rotate(360deg)}}
+.pv-orbit{animation:pv-orbit 14s linear infinite}
+@keyframes pv-line{to{transform:translateY(0)}}
+@keyframes pv-up{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+@keyframes pv-pop{from{opacity:0;transform:scale(.6) rotate(-12deg)}to{opacity:1;transform:none}}
+@keyframes pv-marquee{to{transform:translateX(-50%)}}
+@keyframes pv-pulse{0%{box-shadow:0 0 0 0 rgba(46,158,91,.55)}100%{box-shadow:0 0 0 12px rgba(46,158,91,0)}}
+@keyframes pv-shine{0%{transform:translateX(-150%) skewX(-20deg)}50%,100%{transform:translateX(450%) skewX(-20deg)}}
+@keyframes pv-draw{to{stroke-dashoffset:0}}
+@keyframes pv-count{to{--pv-n:11}}
+@keyframes pv-rot{to{--pv-a:360deg}}
+@keyframes pv-ping{0%{transform:scale(.4);opacity:.8}100%{transform:scale(2.6);opacity:0}}
+@keyframes pv-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes pv-wordmark{to{transform:translateX(-50%)}}
+@keyframes pv-tilt{from{opacity:0;transform:perspective(1000px) rotateX(18deg) translateY(70px) scale(.95)}to{opacity:1;transform:none}}
+@keyframes pv-slide-l{from{transform:translateX(6%)}to{transform:translateX(-36%)}}
+@keyframes pv-slide-r{from{transform:translateX(-36%)}to{transform:translateX(6%)}}
+@keyframes pv-hero-out{to{opacity:.2;transform:scale(.94) translateY(-50px)}}
+@keyframes pv-grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes pv-fade{from{opacity:0}to{opacity:1}}
+@keyframes pv-modal{from{opacity:0;transform:translateY(40px) scale(.94)}to{opacity:1;transform:none}}
+@keyframes pv-check{to{stroke-dashoffset:0}}
+.pv-float{animation:pv-float 7s ease-in-out infinite}
+.pv-ring{animation:pv-spin 40s linear infinite}
+.pv-ring-rev{animation:pv-spin 64s linear infinite reverse}
+.pv-snow{position:absolute;top:0;color:#FFFFFF;animation:pv-snow linear infinite;pointer-events:none}
+.pv-ln{display:block;overflow:hidden;padding-bottom:.42em;margin-bottom:-.34em}
+.pv-ln > span{display:block;transform:translateY(110%);animation:pv-line 1.1s cubic-bezier(.16,1,.3,1) forwards}
+.pv-up{opacity:0;animation:pv-up 1s cubic-bezier(.16,1,.3,1) forwards}
+.pv-pop{opacity:0;animation:pv-pop 1.2s cubic-bezier(.34,1.56,.64,1) forwards}
+.pv-d1{animation-delay:.15s}.pv-d2{animation-delay:.3s}.pv-d3{animation-delay:.45s}.pv-d4{animation-delay:.7s}.pv-d5{animation-delay:.9s}
+.pv-draw{stroke-dasharray:420;stroke-dashoffset:420;animation:pv-draw 1.4s cubic-bezier(.65,0,.35,1) 1.2s forwards}
+.pv-marquee{display:flex;width:max-content;animation:pv-marquee 34s linear infinite}
+.pv-marquee-rev{display:flex;width:max-content;animation:pv-marquee 40s linear infinite reverse}
+.pv-wordmark{display:flex;width:max-content;animation:pv-wordmark 70s linear infinite}
+.pv-dot{animation:pv-pulse 1.8s ease-out infinite}
+.pv-bob{animation:pv-bob 3.5s ease-in-out infinite}
+.pv-count{counter-reset:n var(--pv-n);animation:pv-count 2.2s cubic-bezier(.16,1,.3,1) 1s forwards}
+.pv-count::after{content:counter(n)}
+.pv-glow{background:conic-gradient(from var(--pv-a),#F2A03D,#7FB6E0,#0F2B46,#C7E7F6,#F2A03D);animation:pv-rot 7s linear infinite}
+.pv-ping{transform-box:fill-box;transform-origin:center;animation:pv-ping 2.4s cubic-bezier(.2,.8,.2,1) infinite}
+.pv-ping2{animation-delay:1.2s}
+.pv-btn{position:relative;overflow:hidden;border:0;cursor:pointer;font-family:inherit;transition:transform .35s cubic-bezier(.16,1,.3,1),box-shadow .35s ease}
+.pv-btn:hover{transform:translateY(-3px);box-shadow:0 18px 36px -16px rgba(15,43,70,.5)}
+.pv-btn:focus-visible,.pv-pill:focus-visible{outline:3px solid #1B5E96;outline-offset:3px}
+.pv-btn-shine::after{content:"";position:absolute;top:0;left:0;width:22%;height:100%;background:rgba(255,255,255,.38);animation:pv-shine 4.5s ease-in-out infinite;pointer-events:none}
+.pv-card{transition:transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s ease}
+.pv-card:hover{transform:translateY(-8px);box-shadow:0 30px 60px -28px rgba(15,43,70,.4)}
+.pv-media{transition:transform 1s cubic-bezier(.16,1,.3,1)}
+.pv-card:hover .pv-media{transform:scale(1.05)}
+[hidden]{display:none !important}
+.pv-progress{position:fixed;top:0;left:0;right:0;height:4px;background:#F2A03D;transform-origin:0 50%;transform:scaleX(0);z-index:60}
+.pv-bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:240px;gap:18px}
+.pv-nav{display:flex}
+@media (max-width: 460px){.pv-brand{display:none}}
+@media (max-width: 1100px){.pv-nav{display:none}}
+.pv-span2{grid-column:span 2}.pv-tall{grid-row:span 2}
+@media (max-width: 900px){.pv-bento{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:210px}}
+@media (max-width: 560px){.pv-bento{grid-template-columns:minmax(0,1fr)}.pv-span2{grid-column:auto}.pv-tall{grid-row:auto}}
+.pv-in{width:100%;box-sizing:border-box;min-height:52px;border-radius:16px;border:1.5px solid #D4E5F2;background:#F7FBFE;padding:12px 16px;font:500 16px 'Montserrat',sans-serif;color:#0F2B46;transition:border-color .2s,box-shadow .2s}
+.pv-in:focus{outline:none;border-color:#1B5E96;box-shadow:0 0 0 4px rgba(27,94,150,.15);background:#FFFFFF}
+.pv-in::placeholder{color:#7A93AA}
+.pv-pill{min-height:46px;padding:0 18px;border-radius:999px;font:700 15px 'Montserrat',sans-serif;cursor:pointer;transition:all .25s ease}
+.pv-overlay{animation:pv-fade .3s ease both}
+.pv-modal{animation:pv-modal .55s cubic-bezier(.16,1,.3,1) both}
+.pv-check{stroke-dasharray:60;stroke-dashoffset:60;animation:pv-check .7s cubic-bezier(.65,0,.35,1) .25s forwards}
+@supports (animation-timeline: view()){
+.pv-reveal{animation:pv-up linear both;animation-timeline:view();animation-range:entry 0% entry 50%}
+.pv-tilt{animation:pv-tilt linear both;animation-timeline:view();animation-range:entry 0% entry 55%}
+.pv-slide-l{animation:pv-slide-l linear both;animation-timeline:view();animation-range:cover}
+.pv-slide-r{animation:pv-slide-r linear both;animation-timeline:view();animation-range:cover}
+.pv-hero-out{animation:pv-hero-out linear both;animation-timeline:view();animation-range:exit 0% exit 100%}
+.pv-progress{animation:pv-grow linear both;animation-timeline:scroll(root)}
+}
+@supports not (animation-timeline: view()){.pv-progress{display:none}}
+@media (prefers-reduced-motion: reduce){
+.pv-float,.pv-ring,.pv-ring-rev,.pv-snow,.pv-marquee,.pv-marquee-rev,.pv-kin,.pv-kin-rev,.pv-orbit,.pv-wordmark,.pv-dot,.pv-bob,.pv-glow,.pv-ping,.pv-btn-shine::after,.pv-slide-l,.pv-slide-r,.pv-hero-out,.pv-overlay,.pv-modal{animation:none}
+.pv-up,.pv-pop,.pv-reveal,.pv-tilt{animation:none;opacity:1}
+.pv-ln > span{animation:none;transform:none}
+.pv-draw,.pv-check{animation:none;stroke-dashoffset:0}
+.pv-count{animation:none;--pv-n:11}
+}
+</style>
+</head>
+<body>
+<div style="font-family: 'Montserrat', sans-serif; color: #0F2B46; background: #F4F9FD; line-height: 1.55; font-size: 17px; overflow-x: clip">
+<div class="pv-progress" aria-hidden="true"></div>
+
+<header style="position: sticky; top: 0; z-index: 40; background: rgba(244,249,253,0.8); backdrop-filter: blur(18px) saturate(1.4); border-bottom: 1px solid rgba(15,43,70,.08)">
+<div style="max-width: 1240px; margin: 0 auto; padding: 12px clamp(16px, 4vw, 28px); display: flex; flex-wrap: nowrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="#top" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #0F2B46">
+<img src="assets/logo.png" alt="Логотип дитячого садка «Пінгві»" style="width: 50px; height: 50px; border-radius: 50%; display: block; box-shadow: 0 6px 16px -8px rgba(15,43,70,.5)">
+<span class="pv-brand" style="font-family: 'Comfortaa', sans-serif; font-weight: 700; font-size: 23px">Пінгві</span>
+</a>
+<nav class="pv-nav" style="flex-wrap: nowrap; gap: 28px; font-weight: 600; font-size: 15px; white-space: nowrap">
+<a href="#groups" style="text-decoration: none; color: #0F2B46">Групи</a>
+<a href="#activities" style="text-decoration: none; color: #0F2B46">Заняття</a>
+<a href="#team" style="text-decoration: none; color: #0F2B46">Команда</a>
+<a href="#compensation" style="text-decoration: none; color: #0F2B46">Компенсація</a>
+<a href="#contacts" style="text-decoration: none; color: #0F2B46">Контакти</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 8px; flex: 0 0 auto"><a href="tel:+380731641250" aria-label="Зателефонувати +380 73 164 12 50" class="pv-btn" style="width: 46px; height: 46px; border-radius: 50%; background: #FFFFFF; border: 1px solid #D4E5F2; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1B5E96" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"></path></svg></a><button type="button" data-open-form="" class="pv-btn" style="display: inline-flex; align-items: center; min-height: 46px; padding: 0 22px; border-radius: 999px; background: #0F2B46; color: #FFFFFF; font-weight: 700; font-size: 15px; white-space: nowrap">Записатися</button></div>
+</div>
+</header>
+
+<section id="top" style="position: relative; background: #C7E7F6; overflow: hidden">
+<div aria-hidden="true" style="position: absolute; left: 0; right: 0; bottom: 80px; overflow: hidden; pointer-events: none">
+<div class="pv-wordmark" style="font-family: 'Comfortaa', sans-serif; font-weight: 700; font-size: clamp(140px, 24vw, 300px); line-height: 1; color: rgba(255,255,255,.45); white-space: nowrap; gap: 100px">
+<span>ПІНГВІ</span><span>ПІНГВІ</span><span>ПІНГВІ</span><span>ПІНГВІ</span>
+</div>
+</div>
+<div aria-hidden="true" style="position: absolute; inset: 0; overflow: hidden; pointer-events: none">
+<span class="pv-snow" style="left: 4%; font-size: 20px; animation-duration: 14s; animation-delay: 0s">✻</span>
+<span class="pv-snow" style="left: 12%; font-size: 10px; animation-duration: 10s; animation-delay: 3s">✻</span>
+<span class="pv-snow" style="left: 21%; font-size: 26px; animation-duration: 18s; animation-delay: 6s; filter: blur(2px)">✻</span>
+<span class="pv-snow" style="left: 31%; font-size: 9px; animation-duration: 11s; animation-delay: 1.5s">✻</span>
+<span class="pv-snow" style="left: 44%; font-size: 14px; animation-duration: 15s; animation-delay: 8s">✻</span>
+<span class="pv-snow" style="left: 53%; font-size: 30px; animation-duration: 20s; animation-delay: 2s; filter: blur(3px)">✻</span>
+<span class="pv-snow" style="left: 63%; font-size: 11px; animation-duration: 9s; animation-delay: 5s">✻</span>
+<span class="pv-snow" style="left: 72%; font-size: 17px; animation-duration: 13s; animation-delay: 7s">✻</span>
+<span class="pv-snow" style="left: 81%; font-size: 12px; animation-duration: 16s; animation-delay: 4s">✻</span>
+<span class="pv-snow" style="left: 90%; font-size: 22px; animation-duration: 12s; animation-delay: 9s; filter: blur(1.5px)">✻</span>
+</div>
+<svg aria-hidden="true" viewBox="0 0 1440 200" preserveAspectRatio="none" style="position: absolute; left: 0; bottom: 0; width: 100%; height: 150px"><path d="M0 200 L0 140 L170 60 L270 120 L430 30 L570 130 L710 80 L870 150 L1020 50 L1170 130 L1310 70 L1440 120 L1440 200 Z" fill="#AFD7EE"></path><path d="M430 30 L480 86 L450 78 L430 102 L408 76 L382 82 Z M1020 50 L1066 102 L1040 96 L1022 118 L1002 94 L976 100 Z" fill="#FFFFFF"></path><path d="M0 200 L0 175 Q360 150 720 172 T1440 165 L1440 200 Z" fill="#F4F9FD"></path></svg>
+
+<div class="pv-hero-out" style="position: relative; max-width: 1240px; margin: 0 auto; padding: clamp(40px, 8vw, 96px) clamp(16px, 4vw, 28px) clamp(130px, 14vw, 190px); display: flex; flex-wrap: wrap; align-items: center; gap: 56px">
+<div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 30px">
+<div class="pv-up pv-d1" style="display: inline-flex; align-self: flex-start; align-items: center; gap: 10px; padding: 10px 18px; border-radius: 999px; background: rgba(255,255,255,.88); font-weight: 700; font-size: 14px; box-shadow: 0 10px 24px -16px rgba(15,43,70,.5)">
+<span class="pv-dot" style="width: 10px; height: 10px; border-radius: 50%; background: #2E9E5B"></span>
+Набір відкрито: є вільні місця
+</div>
+<h1 style="margin: 0; font-family: 'Comfortaa', sans-serif; font-weight: 700; font-size: clamp(36px, 6.4vw, 84px); line-height: 1.04; letter-spacing: -1.5px">
+<span class="pv-ln"><span class="pv-d1">Тут малюки</span></span>
+<span class="pv-ln"><span class="pv-d2">зростають, творять</span></span>
+<span class="pv-ln"><span class="pv-d3" style="display: inline-block; position: relative">і дружать<svg aria-hidden="true" viewBox="0 0 400 30" preserveAspectRatio="none" style="position: absolute; left: 0; bottom: -0.3em; width: 100%; height: 0.22em; overflow: visible"><path class="pv-draw" d="M4 22 C 90 10, 210 10, 396 18" fill="none" stroke="#F2A03D" stroke-width="7" stroke-linecap="round"></path></svg></span></span>
+</h1>
+<p class="pv-up pv-d4" style="margin: 0; font-size: 20px; max-width: 520px; color: #24405C">Приватний дитячий садок повного дня на Теремках, у ЖК Park Land. Дві групи для малят від 1 року 8 місяців.</p>
+<div class="pv-up pv-d5" style="display: flex; flex-wrap: wrap; gap: 12px">
+<button type="button" data-open-form="" class="pv-btn pv-btn-shine" style="display: inline-flex; align-items: center; gap: 12px; min-height: 60px; padding: 0 34px; border-radius: 999px; background: #F2A03D; color: #0F2B46; font-weight: 800; font-size: 17px; box-shadow: 0 16px 34px -16px rgba(185,104,10,.8)">Записатися на екскурсію
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0F2B46" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+<a href="tel:+380731641250" class="pv-btn" style="display: inline-flex; align-items: center; gap: 10px; min-height: 60px; padding: 0 28px; border-radius: 999px; background: #FFFFFF; color: #0F2B46; font-weight: 700; text-decoration: none">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1B5E96" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"></path></svg>
++380 73 164 12 50</a>
+</div>
+</div>
+<div class="pv-pop pv-d2" style="flex: 1 1 400px; min-width: 0; display: flex; justify-content: center">
+<div style="position: relative; width: min(100%, 470px); aspect-ratio: 1 / 1">
+<svg class="pv-ring" aria-hidden="true" viewBox="0 0 200 200" style="position: absolute; inset: 0; width: 100%; height: 100%"><circle cx="100" cy="100" r="96" fill="none" stroke="#FFFFFF" stroke-width="1.2" stroke-dasharray="2 7" stroke-linecap="round"></circle><circle cx="100" cy="4" r="4.5" fill="#F2A03D"></circle><circle cx="4" cy="100" r="2.5" fill="#FFFFFF"></circle></svg>
+<svg class="pv-ring-rev" aria-hidden="true" viewBox="0 0 200 200" style="position: absolute; inset: 7%; width: 86%; height: 86%"><circle cx="100" cy="100" r="96" fill="none" stroke="#0F2B46" stroke-opacity="0.2" stroke-width="0.8"></circle><circle cx="196" cy="100" r="3.5" fill="#0F2B46"></circle></svg>
+<div class="pv-float" style="position: absolute; inset: 14%">
+<div class="pv-glow" style="width: 100%; height: 100%; border-radius: 50%; padding: 5px; box-sizing: border-box; box-shadow: 0 50px 90px -34px rgba(15,43,70,.55)">
+<div style="width: 100%; height: 100%; border-radius: 50%; overflow: hidden; background: #C7E7F6; border: 6px solid #FFFFFF; box-sizing: border-box">
+<img src="assets/logo.png" alt="Логотип «Пінгві. Дитячий садок»: родина пінгвінів" style="width: 100%; height: 100%; display: block; object-fit: cover">
+</div>
+</div>
+</div>
+<div class="pv-bob" style="position: absolute; left: -4%; bottom: 14%; background: #FFFFFF; border-radius: 20px; padding: 12px 16px; box-shadow: 0 18px 40px -20px rgba(15,43,70,.5); display: flex; flex-direction: column">
+<span style="font-family: 'Comfortaa', sans-serif; font-weight: 700; font-size: 22px">8:00–19:00</span>
+<span style="font-size: 13px; color: #3B5672">садочок повного дня</span>
+</div>
+<div class="pv-bob" style="position: absolute; right: -2%; top: 12%; animation-delay: 1.2s; background: #0F2B46; color: #FFFFFF; border-radius: 20px; padding: 12px 16px; box-shadow: 0 18px 40px -20px rgba(15,43,70,.6); display: flex; align-items: center; gap: 10px">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F2A03D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6l8-3z"></path><path d="M9 12l2 2 4-4"></path></svg>
+<span style="font-weight: 700; font-size: 14px">Власне укриття</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<div style="position: relative; height: 230px; margin-top: -30px; overflow: hidden">
+<div style="position: absolute; left: -5%; right: -5%; top: 24px; transform: rotate(-1.6deg); background: #0F2B46; color: #FFFFFF; padding: clamp(12px, 1.4vw, 18px) 0; overflow: hidden">
+<div class="pv-marquee-rev" aria-hidden="true" style="gap: 44px; font-family: 'Comfortaa', sans-serif; font-weight: 700; font-size: clamp(18px, 2vw, 26px); white-space: nowrap">
+<span>English</span><span style="color: #F2A03D">✦</span><span>Музика</span><span style="color: #F2A03D">✦</span><span>Творчість</span><span style="color: #F2A03D">✦</span><span>Здорове харчування</span><span style="color: #F2A03D">✦</span><span>Експерименти</span><span style="color: #F2A03D">✦</span><span>Кулінарія</span><span style="color: #F2A03D">✦</span><span>Літній табір</span><span style="color: #F2A03D">✦</span>
+<span>English</span><span style="color: #F2A03D">✦</span><span>Музика</span><span style="color: #F2A03D">✦</span><span>Творчість</span><span style="color: #F2A03D">✦</span><span>Здорове харчування</span><span style="color: #F2A03D">✦</span><span>Експерименти</span><span style="color: #F2A03D">✦</span><span>Кулінарія</span><span style="color: #F2A03D">✦</span><span>Літній табір</span><span style="color: #F2A03D">✦</span>
+</div>
+</div>
+<div style="position: absolute; left: -5%; right: -5%; top: 128px; transform: rotate(1.2deg); background: #F2A03D; color: #0F2B46; padding: clamp(12px, 1.4vw, 18px) 0; overflow: hidden; box-shadow: 0 20px 40px -24px rgba(15,43,70,.5)">
+<div class="pv-marquee" aria-hidden="true" style="gap: 44px; font-family: 'Comfortaa', sans-serif; font-weight: 700; font-size: clamp(18px, 2vw, 26px); white-space: nowrap">
+<span>Є вільні місця</span><span>✦</span><span>Компенсація від міста</span><span>✦</span><span>Від 1,8 року</span><span>✦</span><span>Теремки · Park Land</span><span>✦</span>
+<span>Є вільні місця</span><span>✦</span><span>Компенсація від міста</span><span>✦</span><span>Від 1,8 року</span><span>✦</span><span>Теремки · Park Land</span><span>✦</span>
+<span>Є вільні місця</span><span>✦</span><span>Компенсація від міста</span><span>✦</span><span>Від 1,8 року</span><span>✦</span><span>Теремки · Park Land</span><span>✦</span>
+</div>
+</div>
+</div>
+
+<section id="about" style="max-width: 1240px; margin: 0 auto; padding: 72px clamp(16px, 4vw, 28px) 32px; display: flex; flex-direction: column; gap: 52px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 32px">
+<div class="pv-reveal" style="display: flex; flex-direction: column; gap: 14px; max-width: 700px">
+<span style="font-weight: 800; font-size: 13px; letter-spacing: 2.4px; text-transform: uppercase; color: #1B5E96">Чому батьки обирають нас</span>
+<h2 style="margin: 0; font-family: 'Comfortaa', sans-serif; font-weight: 700; font-size: clamp(34px, 4.4vw, 58px); line-height: 1.08; letter-spacing: -1px">Затишний садочок, де&#160;дитину чують</h2>
+</div>
+<div class="pv-reveal" style="display: flex; align-items: center; gap: 16px">
+<span class="pv-count" style="font-family: 'Comfortaa', sans-serif; font-weight: 700; font-size: clamp(76px, 10vw, 120px); line-height: .9; color: #F2A03D; letter-spacing: -4px"></span>
+<span style="font-weight: 700; font-size: 18px; line-height: 1.3; max-width: 170px">годин турботи щодня, з 8:00 до 19:00</span>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 20px">
+<div class="pv-card pv-tilt" style="background: #FFFFFF; border-radius: 32px; padding: 34px 30px; display: flex; flex-direction: column; gap: 16px; border: 1px solid rgba(15,43,70,.06)">
+<span style="font-family: 'Comfortaa', sans-serif; font-weight: 700; font-size: 15px; color: #6E879E">01</span>
+<div style="width: 60px; height: 60px; border-radius: 20px; background: #DDEEF9; display: flex; align-items: center; justify-content: center"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1B5E96" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"></path></svg></div>
+<h3 style="margin: 0; font-size: 22px; font-weight: 800">English</h3>
+<p style="margin: 0; color: #3B5672">Англійська з наймолодшого віку, легко і в грі.</p>
+</div>
+<div class="pv-card pv-tilt" style="background: #FFFFFF; border-radius: 32px; padding: 34px 30px; display: flex; flex-direction: column; gap: 16px; border: 1px solid rgba(15,43,70,.06)">
+<span style="font-family: 'Comfortaa', sans-serif; font-weight: 700; font-size: 15px; color: #6E879E">02</span>
+<div style="width: 60px; height: 60px; border-radius: 20px; background: #FCE3C4; display: flex; align-items: center; justify-content: center"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#9A560C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg></div>
+<h3 style="margin: 0; font-size: 22px; font-weight: 800">Музика</h3>
+<p style="margin: 0; color: #3B5672">Співаємо, танцюємо і готуємося до свят разом.</p>
+</div>
+<div class="pv-card pv-tilt" style="background: #FFFFFF; border-radius: 32px; padding: 34px 30px; display: flex; flex-direction: column; gap: 16px; border: 1px solid rgba(15,43,70,.06)">
+<span style="font-family: 'Comfortaa', sans-serif; font-weight: 700; font-size: 15px; color: #6E879E">03</span>
+<div style="width: 60px; height: 60px; border-radius: 20px; background: #DDEEF9; display: flex; align-items: center; justify-content: center"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1B5E96" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"></path><path d="M7.5 15h9"></path></svg></div>
+<h3 style="margin: 0; font-size: 22px; font-weight: 800">Експерименти</h3>
+<p style="margin: 0; color: #3B5672">Досліджуємо світ руками: досліди, сенсорика, перші відкриття.</p>
+</div>
+<div class="pv-card pv-tilt" style="background: #0F2B46; color: #FFFFFF; border-radius: 32px; padding: 34px 30px; display: flex; flex-direction: column; gap: 16px">
+<span style="font-family: 'Comfortaa', sans-serif; font-weight: 700; font-size: 15px; color: #8FB2D1">04</span>
+<div style="width: 60px; height: 60px; border-radius: 20px; background: #F2A03D; display: flex; align-items: center; justify-content: center"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#0F2B46" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6l8-3z"></path><path d="M9 12l2 2 4-4"></path></svg></div>
+<h3 style="margin: 0; font-size: 22px; font-weight: 800">Укриття</h3>
+<p style="margin: 0; color: #C9DCEC">Безпечне укриття, щоб навчання не зупинялося під час тривог.</p>
+</div>
+</div>
+</section>
+
+<section aria-label="Діти в «Пінгві» зростають, творять і дружать" style="padding: 64px 0; overflow: hidden; display: flex; flex-direction: column; gap: 4px">
+<div class="pv-kin" aria-hidden="true" style="gap: 48px; padding-right: 48px; white-space: nowrap; font-family: 'Comfortaa', sans-serif; font-weight: 700; font-size: clamp(44px, 9vw, 136px); line-height: 1.12; letter-spacing: -1.5px; color: #0F2B46"><span>зростають</span><span style="color: #F2A03D">✦</span><span>творять</span><span style="color: #F2A03D">✦</span><span>дружать</span><span style="color: #F2A03D">✦</span><span>зростають</span><span style="color: #F2A03D">✦</span><span>творять</span><span style="color: #F2A03D">✦</span><span>дружать</span><span style="color: #F2A03D">✦</span></div>
+<div class="pv-kin-rev" aria-hidden="true" style="gap: 48px; padding-right: 48px; white-space: nowrap; font-family: 'Comfortaa', sans-serif; font-weight: 700; font-size: clamp(44px, 9vw, 136px); line-height: 1.12; letter-spacing: -1.5px; color: #A9CDEA"><span>граються</span><span style="color: #F2A03D">✦</span><span>досліджують</span><span style="color: #F2A03D">✦</span><span>сміються</span><span style="color: #F2A03D">✦</span><span>граються</span><span style="color: #F2A03D">✦</span><span>досліджують</span><span style="color: #F2A03D">✦</span><span>сміються</span><span style="color: #F2A03D">✦</span></div>
+</section>
+
+<section id="groups" style="max-width: 1240px; margin: 0 auto; padding: 24px clamp(16px, 4vw, 28px) 64px; display: flex; flex-direction: column; gap: 40px">
+<div class="pv-reveal" style="display: flex; flex-direction: column; gap: 14px; max-width: 700px">
+<span style="font-weight: 800; font-size: 13px; letter-spacing: 2.4px; text-transform: uppercase; color: #1B5E96">Наші групи</span>
+<h2 style="margin: 0; font-family: 'Comfortaa', sans-serif; font-weight: 700; font-size: clamp(34px, 4.4vw, 58px); line-height: 1.08; letter-spacing: -1px">Дві групи, свій темп для кожного віку</h2>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 22px">
+<div class="pv-card pv-tilt" style="position: relative; overflow: hidden; background: #DDEEF9; border-radius: 36px; padding: clamp(24px, 4vw, 40px); display: flex; flex-direction: column; gap: 22px">
+<svg class="pv-ring" aria-hidden="true" viewBox="0 0 200 200" style="position: absolute; right: -70px; top: -70px; width: 240px; height: 240px; opacity: .7"><circle cx="100" cy="100" r="90" fill="none" stroke="#FFFFFF" stroke-width="1.4" stroke-dasharray="2 7"></circle></svg>
+<div style="position: relative; display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<span style="background: #FFFFFF; border-radius: 999px; padding: 8px 16px; font-weight: 800; font-size: 14px">1 р. 8 міс. – 4 роки</span>
+<span style="font-family: 'Comfortaa', sans-serif; font-weight: 700; font-size: 15px; color: #1B5E96">01</span>
+</div>
+<h3 style="position: relative; margin: 0; font-family: 'Comfortaa', sans-serif; font-weight: 700; font-size: clamp(28px, 3.2vw, 40px); line-height: 1.1">Молодша група</h3>
+<p style="position: relative; margin: 0; color: #24405C; font-size: 18px">Перший досвід садочка: м’яка адаптація, сенсорні ігри, перші досліди, музика, англійська, кулінарія і багато обіймів.</p>
+<div style="position: relative; display: flex; flex-wrap: wrap; gap: 8px">
+<span style="border: 1.5px solid #0F2B46; border-radius: 999px; padding: 6px 14px; font-weight: 700; font-size: 14px">Адаптація</span>
+<span style="border: 1.5px solid #0F2B46; border-radius: 999px; padding: 6px 14px; font-weight: 700; font-size: 14px">Сенсорика</span><span style="border: 1.5px solid #0F2B46; border-radius: 999px; padding: 6px 14px; font-weight: 700; font-size: 14px">Досліди</span>
+<span style="border: 1.5px solid #0F2B46; border-radius: 999px; padding: 6px 14px; font-weight: 700; font-size: 14px">Музика</span>
+<span style="border: 1.5px solid #0F2B46; border-radius: 999px; padding: 6px 14px; font-weight: 700; font-size: 14px">Кулінарія</span>
+<span style="border: 1.5px solid #0F2B46; border-radius: 999px; padding: 6px 14px; font-weight: 700; font-size: 14px">English</span>
+</div>
+<button type="button" data-open-form="Молодша" class="pv-btn" style="position: relative; align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: 999px; background: #0F2B46; color: #FFFFFF; font-weight: 700; font-size: 16px">Записатися в молодшу
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F2A03D" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+</div>
+<div class="pv-card pv-tilt" style="position: relative; overflow: hidden; background: #0F2B46; color: #FFFFFF; border-radius: 36px; padding: clamp(24px, 4vw, 40px); display: flex; flex-direction: column; gap: 22px">
+<svg class="pv-ring-rev" aria-hidden="true" viewBox="0 0 200 200" style="position: absolute; right: -70px; top: -70px; width: 240px; height: 240px; opacity: .45"><circle cx="100" cy="100" r="90" fill="none" stroke="#F2A03D" stroke-width="1.4" stroke-dasharray="2 7"></circle></svg>
+<div style="position: relative; display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<span style="background: #F2A03D; color: #0F2B46; border-radius: 999px; padding: 8px 16px; font-weight: 800; font-size: 14px">4–6 років</span>
+<span style="font-family: 'Comfortaa', sans-serif; font-weight: 700; font-size: 15px; color: #F2B766">02</span>
+</div>
+<h3 style="position: relative; margin: 0; font-family: 'Comfortaa', sans-serif; font-weight: 700; font-size: clamp(28px, 3.2vw, 40px); line-height: 1.1">Старша група</h3>
+<p style="position: relative; margin: 0; color: #C9DCEC; font-size: 18px">Дошкільна підготовка через гру: букви й цифри, музика, англійська, кулінарія, а також експерименти й шахи з окремим педагогом.</p>
+<div style="position: relative; display: flex; flex-wrap: wrap; gap: 8px">
+<span style="border: 1.5px solid #F2B766; color: #FFFFFF; border-radius: 999px; padding: 6px 14px; font-weight: 700; font-size: 14px">Дошкільна підготовка</span><span style="border: 1.5px solid #F2B766; color: #FFFFFF; border-radius: 999px; padding: 6px 14px; font-weight: 700; font-size: 14px">Музика</span><span style="border: 1.5px solid #F2B766; color: #FFFFFF; border-radius: 999px; padding: 6px 14px; font-weight: 700; font-size: 14px">English</span><span style="border: 1.5px solid #F2B766; color: #FFFFFF; border-radius: 999px; padding: 6px 14px; font-weight: 700; font-size: 14px">Шахи</span>
+<span style="border: 1.5px solid #F2B766; color: #FFFFFF; border-radius: 999px; padding: 6px 14px; font-weight: 700; font-size: 14px">Експерименти</span>
+<span style="border: 1.5px solid #F2B766; color: #FFFFFF; border-radius: 999px; padding: 6px 14px; font-weight: 700; font-size: 14px">Кулінарія</span>
+
+</div>
+<button type="button" data-open-form="Старша" class="pv-btn pv-btn-shine" style="position: relative; align-self: flex-start; display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 26px; border-radius: 999px; background: #F2A03D; color: #0F2B46; font-weight: 800; font-size: 16px">Записатися в старшу
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F2B46" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+</div>
+</div>
+</section>
+
+<section id="activities" style="max-width: 1240px; margin: 0 auto; padding: 48px clamp(16px, 4vw, 28px) 40px; display: flex; flex-direction: column; gap: 40px">
+<div class="pv-reveal" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 14px; max-width: 660px">
+<span style="font-weight: 800; font-size: 13px; letter-spacing: 2.4px; text-transform: uppercase; color: #1B5E96">Наш день</span>
+<h2 style="margin: 0; font-family: 'Comfortaa', sans-serif; font-weight: 700; font-size: clamp(34px, 4.4vw, 58px); line-height: 1.08; letter-spacing: -1px">Вчимося через гру й&#160;відкриття</h2>
+</div>
+<p style="margin: 0; max-width: 360px; color: #3B5672">У вільний час діти самі обирають, чим зайнятися: малювання, ігри чи досліди.</p>
+</div>
+<div class="pv-bento">
+<div class="pv-card pv-tilt pv-span2 pv-tall" style="position: relative; border-radius: 32px; overflow: hidden">
+<div class="pv-media" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #1B5E96; font-weight: 600; font-size: 14px; background: #CFE5F4">[Фото: експерименти]</div>
+<div style="position: absolute; left: 20px; right: 20px; bottom: 20px; background: rgba(255,255,255,.94); backdrop-filter: blur(10px); border-radius: 22px; padding: 18px 22px; display: flex; align-items: center; justify-content: space-between; gap: 16px">
+<span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 22px; font-weight: 800">Експерименти</span><span style="color: #3B5672; font-size: 15px">Кульки, бульбашки, вода й пісок: пояснюємо світ через досліди.</span></span>
+<span style="flex: 0 0 auto; width: 48px; height: 48px; border-radius: 50%; background: #F2A03D; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0F2B46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"></path></svg></span>
+</div>
+</div>
+<div class="pv-card pv-tilt" style="position: relative; border-radius: 32px; overflow: hidden">
+<div class="pv-media" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #8A4E0B; font-weight: 600; font-size: 14px; background: #FCE3C4">[Фото: обід у садочку]</div>
+<span style="position: absolute; left: 16px; bottom: 16px; background: #FFFFFF; border-radius: 999px; padding: 8px 16px; font-weight: 800; font-size: 15px">Здорове харчування</span>
+</div>
+<div class="pv-card pv-tilt" style="position: relative; border-radius: 32px; overflow: hidden">
+<div class="pv-media" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #1B5E96; font-weight: 600; font-size: 14px; background: #DDEEF9">[Фото: кулінарія]</div>
+<span style="position: absolute; left: 16px; bottom: 16px; background: #FFFFFF; border-radius: 999px; padding: 8px 16px; font-weight: 800; font-size: 15px">Готуємо самі</span>
+</div>
+<div class="pv-card pv-tilt" style="position: relative; border-radius: 32px; overflow: hidden">
+<div class="pv-media" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #1B5E96; font-weight: 600; font-size: 14px; background: #DDEEF9">[Фото: сенсорні ігри]</div>
+<span style="position: absolute; left: 16px; bottom: 16px; background: #FFFFFF; border-radius: 999px; padding: 8px 16px; font-weight: 800; font-size: 15px">Сенсорика</span>
+</div>
+<div class="pv-card pv-tilt" style="position: relative; border-radius: 32px; overflow: hidden">
+<div class="pv-media" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #8A4E0B; font-weight: 600; font-size: 14px; background: #FCE3C4">[Фото: літній табір]</div>
+<span style="position: absolute; left: 16px; bottom: 16px; background: #FFFFFF; border-radius: 999px; padding: 8px 16px; font-weight: 800; font-size: 15px">Літній табір</span>
+</div>
+<div class="pv-card pv-tilt pv-span2" style="position: relative; border-radius: 32px; overflow: hidden">
+<div class="pv-media" style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #8A4E0B; font-weight: 600; font-size: 14px; background: #FCE3C4">[Фото: свята у вишиванках]</div>
+<span style="position: absolute; left: 16px; bottom: 16px; background: #FFFFFF; border-radius: 999px; padding: 8px 16px; font-weight: 800; font-size: 15px">Свята і традиції</span>
+</div>
+<a href="https://www.instagram.com/pinhvi.ua/" class="pv-card pv-tilt pv-span2" style="position: relative; border-radius: 32px; overflow: hidden; background: #0F2B46; color: #FFFFFF; text-decoration: none; padding: 28px 30px; display: flex; flex-direction: column; justify-content: space-between; gap: 16px">
+<span style="display: flex; align-items: center; justify-content: space-between; gap: 16px"><span style="font-weight: 800; font-size: 13px; letter-spacing: 2.4px; text-transform: uppercase; color: #F2B766">Instagram</span>
+<span style="flex: 0 0 auto; width: 52px; height: 52px; border-radius: 50%; background: #F2A03D; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0F2B46" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></span></span>
+<span style="display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Comfortaa', sans-serif; font-weight: 700; font-size: clamp(22px, 2.2vw, 30px); line-height: 1.15">@pinhvi.ua</span><span style="color: #C9DCEC; font-size: 15px">Ще більше моментів з життя садочка щодня</span></span>
+</a>
+</div>
+</section>
+
+<section id="team" style="max-width: 1240px; margin: 0 auto; padding: 48px clamp(16px, 4vw, 28px) 40px; display: flex; flex-direction: column; gap: 40px">
+<div class="pv-reveal" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 14px; max-width: 700px">
+<span style="font-weight: 800; font-size: 13px; letter-spacing: 2.4px; text-transform: uppercase; color: #1B5E96">Наша команда</span>
+<h2 style="margin: 0; font-family: 'Comfortaa', sans-serif; font-weight: 700; font-size: clamp(34px, 4.4vw, 58px); line-height: 1.08; letter-spacing: -1px">Люди, яким довіряють найцінніше</h2>
+</div>
+<p style="margin: 0; max-width: 360px; color: #3B5672">Знають кожну дитину на ім’я і помічають її маленькі перемоги.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 20px">
+<div class="pv-card pv-tilt" style="background: #FFFFFF; border-radius: 32px; padding: 34px 30px; display: flex; flex-direction: column; gap: 20px; border: 1px solid rgba(15,43,70,.06)">
+<div style="position: relative; width: 96px; height: 96px; flex: 0 0 auto">
+<svg class="pv-orbit" aria-hidden="true" viewBox="0 0 100 100" style="position: absolute; inset: -8px; width: calc(100% + 16px); height: calc(100% + 16px)"><circle cx="50" cy="50" r="48" fill="none" stroke="#F2A03D" stroke-width="1.2" stroke-dasharray="2 5" stroke-linecap="round"></circle><circle cx="50" cy="2" r="3" fill="#F2A03D"></circle></svg>
+<div style="width: 100%; height: 100%; border-radius: 50%; background: #0F2B46; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-family: 'Comfortaa', sans-serif; font-weight: 700; font-size: 32px">ІМ</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px"><h3 style="margin: 0; font-family: 'Comfortaa', sans-serif; font-size: 26px; font-weight: 700; line-height: 1.15">Ірина Мостова</h3><span style="color: #1B5E96; font-weight: 700; font-size: 15px">Власниця та директорка</span></div>
+<p style="margin: 0; color: #3B5672">Створила «Пінгві» і дбає, щоб кожен день у садочку був безпечним, теплим і цікавим.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto"><span style="border: 1.5px solid #D4E5F2; border-radius: 999px; padding: 5px 12px; font-weight: 700; font-size: 13px; color: #24405C">Безпека</span><span style="border: 1.5px solid #D4E5F2; border-radius: 999px; padding: 5px 12px; font-weight: 700; font-size: 13px; color: #24405C">Команда</span><span style="border: 1.5px solid #D4E5F2; border-radius: 999px; padding: 5px 12px; font-weight: 700; font-size: 13px; color: #24405C">Турбота</span></div>
+</div>
+<div class="pv-card pv-tilt" style="background: #FFFFFF; border-radius: 32px; padding: 34px 30px; display: flex; flex-direction: column; gap: 20px; border: 1px solid rgba(15,43,70,.06)">
+<div style="position: relative; width: 96px; height: 96px; flex: 0 0 auto">
+<svg class="pv-orbit" aria-hidden="true" viewBox="0 0 100 100" style="position: absolute; inset: -8px; width: calc(100% + 16px); height: calc(100% + 16px)"><circle cx="50" cy="50" r="48" fill="none" stroke="#1B5E96" stroke-width="1.2" stroke-dasharray="2 5" stroke-linecap="round"></circle><circle cx="50" cy="2" r="3" fill="#1B5E96"></circle></svg>
+<div style="width: 100%; height: 100%; border-radius: 50%; background: #DDEEF9; color: #1B5E96; display: flex; align-items: center; justify-content: center; font-family: 'Comfortaa', sans-serif; font-weight: 700; font-size: 32px">ВВ</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px"><h3 style="margin: 0; font-family: 'Comfortaa', sans-serif; font-size: 26px; font-weight: 700; line-height: 1.15">Вікторія Вітвіцька</h3><span style="color: #1B5E96; font-weight: 700; font-size: 15px">Вихователька молодшої групи</span></div>
+<p style="margin: 0; color: #3B5672">Супроводжує малюків у їхній перший досвід садочка: м’яка адаптація, ігри, музика й кулінарія.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto"><span style="border: 1.5px solid #D4E5F2; border-radius: 999px; padding: 5px 12px; font-weight: 700; font-size: 13px; color: #24405C">Адаптація</span><span style="border: 1.5px solid #D4E5F2; border-radius: 999px; padding: 5px 12px; font-weight: 700; font-size: 13px; color: #24405C">Сенсорика</span><span style="border: 1.5px solid #D4E5F2; border-radius: 999px; padding: 5px 12px; font-weight: 700; font-size: 13px; color: #24405C">Кулінарія</span></div>
+</div>
+<div class="pv-card pv-tilt" style="background: #FFFFFF; border-radius: 32px; padding: 34px 30px; display: flex; flex-direction: column; gap: 20px; border: 1px solid rgba(15,43,70,.06)">
+<div style="position: relative; width: 96px; height: 96px; flex: 0 0 auto">
+<svg class="pv-orbit" aria-hidden="true" viewBox="0 0 100 100" style="position: absolute; inset: -8px; width: calc(100% + 16px); height: calc(100% + 16px)"><circle cx="50" cy="50" r="48" fill="none" stroke="#E58C24" stroke-width="1.2" stroke-dasharray="2 5" stroke-linecap="round"></circle><circle cx="50" cy="2" r="3" fill="#E58C24"></circle></svg>
+<div style="width: 100%; height: 100%; border-radius: 50%; background: #FCE3C4; color: #8A4E0B; display: flex; align-items: center; justify-content: center; font-family: 'Comfortaa', sans-serif; font-weight: 700; font-size: 32px">ВГ</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px"><h3 style="margin: 0; font-family: 'Comfortaa', sans-serif; font-size: 26px; font-weight: 700; line-height: 1.15">Вікторія Гурняк</h3><span style="color: #1B5E96; font-weight: 700; font-size: 15px">Вихователька старшої групи</span></div>
+<p style="margin: 0; color: #3B5672">Готує старших до школи через гру: дошкільна підготовка, творчість і кулінарія.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto"><span style="border: 1.5px solid #D4E5F2; border-radius: 999px; padding: 5px 12px; font-weight: 700; font-size: 13px; color: #24405C">Підготовка до школи</span><span style="border: 1.5px solid #D4E5F2; border-radius: 999px; padding: 5px 12px; font-weight: 700; font-size: 13px; color: #24405C">Кулінарія</span><span style="border: 1.5px solid #D4E5F2; border-radius: 999px; padding: 5px 12px; font-weight: 700; font-size: 13px; color: #24405C">Творчість</span></div>
+</div>
+<div class="pv-card pv-tilt" style="background: #FFFFFF; border-radius: 32px; padding: 34px 30px; display: flex; flex-direction: column; gap: 20px; border: 1px solid rgba(15,43,70,.06)">
+<div style="position: relative; width: 96px; height: 96px; flex: 0 0 auto">
+<svg class="pv-orbit" aria-hidden="true" viewBox="0 0 100 100" style="position: absolute; inset: -8px; width: calc(100% + 16px); height: calc(100% + 16px)"><circle cx="50" cy="50" r="48" fill="none" stroke="#1B5E96" stroke-width="1.2" stroke-dasharray="2 5" stroke-linecap="round"></circle><circle cx="50" cy="2" r="3" fill="#1B5E96"></circle></svg>
+<div style="width: 100%; height: 100%; border-radius: 50%; background: #DDEEF9; display: flex; align-items: center; justify-content: center"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#1B5E96" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"></path></svg></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px"><h3 style="margin: 0; font-family: 'Comfortaa', sans-serif; font-size: 24px; font-weight: 700; line-height: 1.15">Євгенія Становська</h3><span style="color: #1B5E96; font-weight: 700; font-size: 15px">Англійська · обидві групи</span></div>
+<p style="margin: 0; color: #3B5672">Англійська через пісні, ігри й щоденні ситуації.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto"><span style="border: 1.5px solid #D4E5F2; border-radius: 999px; padding: 5px 12px; font-weight: 700; font-size: 13px; color: #24405C">English</span><span style="border: 1.5px solid #D4E5F2; border-radius: 999px; padding: 5px 12px; font-weight: 700; font-size: 13px; color: #24405C">Обидві групи</span></div>
+</div>
+<div class="pv-card pv-tilt" style="background: #FFFFFF; border-radius: 32px; padding: 34px 30px; display: flex; flex-direction: column; gap: 20px; border: 1px solid rgba(15,43,70,.06)">
+<div style="position: relative; width: 96px; height: 96px; flex: 0 0 auto">
+<svg class="pv-orbit" aria-hidden="true" viewBox="0 0 100 100" style="position: absolute; inset: -8px; width: calc(100% + 16px); height: calc(100% + 16px)"><circle cx="50" cy="50" r="48" fill="none" stroke="#E58C24" stroke-width="1.2" stroke-dasharray="2 5" stroke-linecap="round"></circle><circle cx="50" cy="2" r="3" fill="#E58C24"></circle></svg>
+<div style="width: 100%; height: 100%; border-radius: 50%; background: #FCE3C4; display: flex; align-items: center; justify-content: center"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#9A560C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px"><h3 style="margin: 0; font-family: 'Comfortaa', sans-serif; font-size: 24px; font-weight: 700; line-height: 1.15">Світлана Радкевич</h3><span style="color: #1B5E96; font-weight: 700; font-size: 15px">Музика · обидві групи</span></div>
+<p style="margin: 0; color: #3B5672">Співи, ритм, танці та підготовка до свят.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto"><span style="border: 1.5px solid #D4E5F2; border-radius: 999px; padding: 5px 12px; font-weight: 700; font-size: 13px; color: #24405C">Музика</span><span style="border: 1.5px solid #D4E5F2; border-radius: 999px; padding: 5px 12px; font-weight: 700; font-size: 13px; color: #24405C">Свята</span></div>
+</div>
+<div class="pv-card pv-tilt" style="background: #FFFFFF; border-radius: 32px; padding: 34px 30px; display: flex; flex-direction: column; gap: 20px; border: 1px solid rgba(15,43,70,.06)">
+<div style="position: relative; width: 96px; height: 96px; flex: 0 0 auto">
+<svg class="pv-orbit" aria-hidden="true" viewBox="0 0 100 100" style="position: absolute; inset: -8px; width: calc(100% + 16px); height: calc(100% + 16px)"><circle cx="50" cy="50" r="48" fill="none" stroke="#F2A03D" stroke-width="1.2" stroke-dasharray="2 5" stroke-linecap="round"></circle><circle cx="50" cy="2" r="3" fill="#F2A03D"></circle></svg>
+<div style="width: 100%; height: 100%; border-radius: 50%; background: #0F2B46; display: flex; align-items: center; justify-content: center"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#F2A03D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"></path><path d="M7.5 15h9"></path></svg></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px"><h3 style="margin: 0; font-family: 'Comfortaa', sans-serif; font-size: 24px; font-weight: 700; line-height: 1.15">Юрій Кліщ</h3><span style="color: #1B5E96; font-weight: 700; font-size: 15px">Експерименти й шахи · старша група</span></div>
+<p style="margin: 0; color: #3B5672">Досліди, логіка і шахи для майбутніх школярів.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto"><span style="border: 1.5px solid #D4E5F2; border-radius: 999px; padding: 5px 12px; font-weight: 700; font-size: 13px; color: #24405C">Експерименти</span><span style="border: 1.5px solid #D4E5F2; border-radius: 999px; padding: 5px 12px; font-weight: 700; font-size: 13px; color: #24405C">Шахи</span></div>
+</div>
+</div>
+</section>
+
+<section id="schedule" style="max-width: 1240px; margin: 0 auto; padding: 56px clamp(16px, 4vw, 28px) 32px; display: flex; flex-direction: column; gap: 40px">
+<div class="pv-reveal" style="display: flex; flex-direction: column; gap: 14px; max-width: 700px">
+<span style="font-weight: 800; font-size: 13px; letter-spacing: 2.4px; text-transform: uppercase; color: #1B5E96">Режим дня</span>
+<h2 style="margin: 0; font-family: 'Comfortaa', sans-serif; font-weight: 700; font-size: clamp(32px, 4.4vw, 58px); line-height: 1.08; letter-spacing: -1px">Ситий, виспаний і щасливий малюк</h2>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start">
+<div style="flex: 1 1 320px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 20px">
+<div class="pv-tilt" style="background: #0F2B46; color: #FFFFFF; border-radius: 32px; padding: 30px; display: flex; flex-direction: column; gap: 12px">
+<div style="width: 52px; height: 52px; border-radius: 17px; background: #F2A03D; display: flex; align-items: center; justify-content: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0F2B46" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 3v8a3 3 0 0 0 3 3v7M7 3v6M10 3v8a3 3 0 0 1-3 3"></path><path d="M17 21V3c-2 1-3.5 4-3.5 8 0 2 1 3 3.5 3"></path></svg></div>
+<span style="font-family: 'Comfortaa', sans-serif; font-weight: 700; font-size: clamp(36px, 4vw, 52px); line-height: 1">3 + 2</span>
+<span style="font-weight: 800; font-size: 18px">Здорове харчування</span>
+<span style="font-size: 15px; opacity: .85">Три повноцінні прийоми їжі та два перекуси щодня</span>
+</div>
+<div class="pv-tilt" style="background: #FFFFFF; color: #0F2B46; border-radius: 32px; padding: 30px; display: flex; flex-direction: column; gap: 12px">
+<div style="width: 52px; height: 52px; border-radius: 17px; background: #DDEEF9; display: flex; align-items: center; justify-content: center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1B5E96" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 13A9 9 0 1 1 11 3a7 7 0 0 0 10 10z"></path></svg></div>
+<span style="font-family: 'Comfortaa', sans-serif; font-weight: 700; font-size: clamp(36px, 4vw, 52px); line-height: 1">13:00–15:00</span>
+<span style="font-weight: 800; font-size: 18px">Денний сон</span>
+<span style="font-size: 15px; opacity: .85">Спокійний відпочинок за режимом</span>
+</div>
+</div>
+<div class="pv-tilt" style="flex: 999 1 420px; min-width: 0; position: relative; background: #FFFFFF; border-radius: 32px; padding: 22px 28px 22px 0; border: 1px solid rgba(15,43,70,.06)">
+<div aria-hidden="true" style="position: absolute; left: 156px; top: 22px; bottom: 22px; width: 2px; background: #D4E5F2"></div>
+<ol style="position: relative; list-style: none; margin: 0; padding: 0">
+<li class="pv-reveal" style="display: grid; grid-template-columns: 120px 24px minmax(0, 1fr); align-items: center; gap: 12px; padding: 9px 0">
+<span style="font-weight: 800; font-size: 15px; color: #1B5E96; text-align: right">8:00</span>
+<span style="display: flex; justify-content: center"><span style="border-radius: 50%; box-sizing: border-box; width: 18px; height: 18px; background: #F2A03D; box-shadow: 0 0 0 6px rgba(242,160,61,.2)"></span></span>
+<span style="font-weight: 800; font-size: 17px">Зустрічаємо дітей</span>
+</li>
+<li class="pv-reveal" style="display: grid; grid-template-columns: 120px 24px minmax(0, 1fr); align-items: center; gap: 12px; padding: 9px 0">
+<span style="font-weight: 800; font-size: 15px; color: #1B5E96; text-align: right"></span>
+<span style="display: flex; justify-content: center"><span style="border-radius: 50%; box-sizing: border-box; width: 12px; height: 12px; background: #FFFFFF; border: 3px solid #A9CDEA"></span></span>
+<span style="font-weight: 600; font-size: 17px">Сніданок</span>
+</li>
+<li class="pv-reveal" style="display: grid; grid-template-columns: 120px 24px minmax(0, 1fr); align-items: center; gap: 12px; padding: 9px 0">
+<span style="font-weight: 800; font-size: 15px; color: #1B5E96; text-align: right"></span>
+<span style="display: flex; justify-content: center"><span style="border-radius: 50%; box-sizing: border-box; width: 12px; height: 12px; background: #FFFFFF; border: 3px solid #A9CDEA"></span></span>
+<span style="font-weight: 600; font-size: 17px">Заняття: English, музика, творчість</span>
+</li>
+<li class="pv-reveal" style="display: grid; grid-template-columns: 120px 24px minmax(0, 1fr); align-items: center; gap: 12px; padding: 9px 0">
+<span style="font-weight: 800; font-size: 15px; color: #1B5E96; text-align: right"></span>
+<span style="display: flex; justify-content: center"><span style="border-radius: 50%; box-sizing: border-box; width: 12px; height: 12px; background: #FFFFFF; border: 3px solid #A9CDEA"></span></span>
+<span style="font-weight: 600; font-size: 17px">Перекус</span>
+</li>
+<li class="pv-reveal" style="display: grid; grid-template-columns: 120px 24px minmax(0, 1fr); align-items: center; gap: 12px; padding: 9px 0">
+<span style="font-weight: 800; font-size: 15px; color: #1B5E96; text-align: right"></span>
+<span style="display: flex; justify-content: center"><span style="border-radius: 50%; box-sizing: border-box; width: 12px; height: 12px; background: #FFFFFF; border: 3px solid #A9CDEA"></span></span>
+<span style="font-weight: 600; font-size: 17px">Прогулянка</span>
+</li>
+<li class="pv-reveal" style="display: grid; grid-template-columns: 120px 24px minmax(0, 1fr); align-items: center; gap: 12px; padding: 9px 0">
+<span style="font-weight: 800; font-size: 15px; color: #1B5E96; text-align: right"></span>
+<span style="display: flex; justify-content: center"><span style="border-radius: 50%; box-sizing: border-box; width: 12px; height: 12px; background: #FFFFFF; border: 3px solid #A9CDEA"></span></span>
+<span style="font-weight: 600; font-size: 17px">Обід</span>
+</li>
+<li class="pv-reveal" style="display: grid; grid-template-columns: 120px 24px minmax(0, 1fr); align-items: center; gap: 12px; padding: 9px 0">
+<span style="font-weight: 800; font-size: 15px; color: #1B5E96; text-align: right">13:00–15:00</span>
+<span style="display: flex; justify-content: center"><span style="border-radius: 50%; box-sizing: border-box; width: 18px; height: 18px; background: #F2A03D; box-shadow: 0 0 0 6px rgba(242,160,61,.2)"></span></span>
+<span style="font-weight: 800; font-size: 17px">Денний сон</span>
+</li>
+<li class="pv-reveal" style="display: grid; grid-template-columns: 120px 24px minmax(0, 1fr); align-items: center; gap: 12px; padding: 9px 0">
+<span style="font-weight: 800; font-size: 15px; color: #1B5E96; text-align: right"></span>
+<span style="display: flex; justify-content: center"><span style="border-radius: 50%; box-sizing: border-box; width: 12px; height: 12px; background: #FFFFFF; border: 3px solid #A9CDEA"></span></span>
+<span style="font-weight: 600; font-size: 17px">Перекус</span>
+</li>
+<li class="pv-reveal" style="display: grid; grid-template-columns: 120px 24px minmax(0, 1fr); align-items: center; gap: 12px; padding: 9px 0">
+<span style="font-weight: 800; font-size: 15px; color: #1B5E96; text-align: right"></span>
+<span style="display: flex; justify-content: center"><span style="border-radius: 50%; box-sizing: border-box; width: 12px; height: 12px; background: #FFFFFF; border: 3px solid #A9CDEA"></span></span>
+<span style="font-weight: 600; font-size: 17px">Вечеря</span>
+</li>
+<li class="pv-reveal" style="display: grid; grid-template-columns: 120px 24px minmax(0, 1fr); align-items: center; gap: 12px; padding: 9px 0">
+<span style="font-weight: 800; font-size: 15px; color: #1B5E96; text-align: right">до 19:00</span>
+<span style="display: flex; justify-content: center"><span style="border-radius: 50%; box-sizing: border-box; width: 18px; height: 18px; background: #F2A03D; box-shadow: 0 0 0 6px rgba(242,160,61,.2)"></span></span>
+<span style="font-weight: 800; font-size: 17px">Повертаємося додому</span>
+</li>
+</ol>
+</div>
+</div>
+</section>
+
+<section id="compensation" style="max-width: 1240px; margin: 0 auto; padding: 48px 28px">
+<div class="pv-glow pv-tilt" style="border-radius: 42px; padding: 3px">
+<div style="position: relative; overflow: hidden; background: #0F2B46; color: #FFFFFF; border-radius: 40px; padding: clamp(36px, 6vw, 80px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 40px">
+<svg class="pv-ring" aria-hidden="true" viewBox="0 0 200 200" style="position: absolute; right: -140px; top: -140px; width: 460px; height: 460px; opacity: .3"><circle cx="100" cy="100" r="90" fill="none" stroke="#F2B766" stroke-width="1" stroke-dasharray="3 9"></circle><circle cx="100" cy="100" r="64" fill="none" stroke="#7FB6E0" stroke-width="1" stroke-dasharray="1 6"></circle></svg>
+<div style="position: relative; flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<span style="font-weight: 800; font-size: 13px; letter-spacing: 2.4px; text-transform: uppercase; color: #F2B766">Компенсація від міста</span>
+<h2 style="margin: 0; font-family: 'Comfortaa', sans-serif; font-weight: 700; font-size: clamp(32px, 4vw, 52px); line-height: 1.1; letter-spacing: -1px">Ми учасник програми «Гроші ходять за&#160;дитиною»</h2>
+<p style="margin: 0; color: #C9DCEC; font-size: 18px; max-width: 560px">Частину вартості садочка компенсує місто Київ. Розкажемо, як оформити компенсацію і які документи знадобляться.</p>
+</div>
+<button type="button" data-open-form="" class="pv-btn" style="position: relative; flex: 0 0 auto; display: inline-flex; align-items: center; gap: 10px; min-height: 60px; padding: 0 32px; border-radius: 999px; background: #F2A03D; color: #0F2B46; font-weight: 800; font-size: 17px">Дізнатися деталі
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F2B46" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+</div>
+</div>
+</section>
+
+<section id="contacts" style="max-width: 1240px; margin: 0 auto; padding: 64px clamp(16px, 4vw, 28px) 72px; display: flex; flex-wrap: wrap; gap: 40px; align-items: stretch">
+<div class="pv-reveal" style="flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 30px">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<span style="font-weight: 800; font-size: 13px; letter-spacing: 2.4px; text-transform: uppercase; color: #1B5E96">Приходьте знайомитися</span>
+<h2 style="margin: 0; font-family: 'Comfortaa', sans-serif; font-weight: 700; font-size: clamp(34px, 4.4vw, 58px); line-height: 1.08; letter-spacing: -1px">Запишіться на екскурсію садочком</h2>
+<p style="margin: 0; color: #3B5672; max-width: 480px; font-size: 18px">Покажемо групи, укриття і познайомимо з вихователями.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 22px; font-size: 18px">
+<div style="display: flex; flex-direction: column"><span style="font-size: 14px; color: #3B5672">Адреса</span><span style="font-weight: 800">Київ, вул. Практична, 6</span><span style="font-size: 15px; color: #3B5672">Теремки-2, ЖК Park Land</span></div>
+<div style="display: flex; flex-direction: column"><span style="font-size: 14px; color: #3B5672">Телефон</span><a href="tel:+380731641250" style="font-weight: 800; text-decoration: none">+380 73 164 12 50</a></div>
+<div style="display: flex; flex-direction: column"><span style="font-size: 14px; color: #3B5672">Години роботи</span><span style="font-weight: 800">8:00–19:00</span></div>
+<div style="display: flex; flex-direction: column"><span style="font-size: 14px; color: #3B5672">Instagram</span><a href="https://www.instagram.com/pinhvi.ua/" style="font-weight: 800; text-decoration: none">@pinhvi.ua</a></div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<button type="button" data-open-form="" class="pv-btn pv-btn-shine" style="display: inline-flex; align-items: center; min-height: 60px; padding: 0 34px; border-radius: 999px; background: #F2A03D; color: #0F2B46; font-weight: 800; font-size: 17px">Записатися на екскурсію</button>
+<a href="tel:+380731641250" class="pv-btn" style="display: inline-flex; align-items: center; min-height: 60px; padding: 0 30px; border-radius: 999px; background: #FFFFFF; color: #0F2B46; font-weight: 700; text-decoration: none; border: 1px solid #CFE5F4">Зателефонувати</a>
+</div>
+</div>
+<a href="https://www.google.com/maps/place/%D0%94%D0%98%D0%A2%D0%AF%D0%A7%D0%98%D0%99+%D0%A1%D0%90%D0%94%D0%9E%D0%9A+%C2%AB%D0%9F%D0%86%D0%9D%D0%93%D0%92%D0%86%C2%BB/@50.3942544,30.4705234,17z/data=!4m6!3m5!1s0x40d4c976c37a94cd:0x744b302bc13f0f00!8m2!3d50.3942544!4d30.4705234!16s%2Fg%2F11lnwyvq8h" aria-label="Відкрити садок «Пінгві» в Google Maps" class="pv-card pv-tilt" style="flex: 1 1 440px; min-width: 0; min-height: clamp(300px, 40vw, 440px); position: relative; border-radius: 40px; overflow: hidden; background: #E3F0F9; display: block">
+<svg aria-hidden="true" viewBox="0 0 600 460" preserveAspectRatio="xMidYMid slice" style="position: absolute; inset: 0; width: 100%; height: 100%">
+<rect width="600" height="460" fill="#E3F0F9"></rect>
+<path d="M-20 330 C 120 300, 200 380, 360 340 S 560 300, 640 330 L 640 480 L -20 480 Z" fill="#D2E8D6"></path>
+<circle cx="110" cy="110" r="70" fill="#D2E8D6"></circle>
+<circle cx="500" cy="90" r="50" fill="#D2E8D6"></circle>
+<g stroke="#FFFFFF" stroke-linecap="round" fill="none">
+<path d="M-20 200 L 640 150" stroke-width="22"></path>
+<path d="M260 -20 L 330 480" stroke-width="18"></path>
+<path d="M-20 60 L 640 260" stroke-width="10"></path>
+<path d="M440 -20 L 400 480" stroke-width="10"></path>
+<path d="M120 480 L 200 -20" stroke-width="8"></path>
+<path d="M-20 420 L 640 380" stroke-width="8"></path>
+</g>
+<g fill="#C9DEEE">
+<rect x="350" y="190" width="34" height="46" rx="6"></rect><rect x="350" y="250" width="34" height="34" rx="6"></rect>
+<rect x="220" y="230" width="28" height="40" rx="6"></rect><rect x="460" y="200" width="44" height="30" rx="6"></rect>
+<rect x="160" y="250" width="40" height="28" rx="6"></rect><rect x="470" y="300" width="36" height="40" rx="6"></rect>
+</g>
+<circle class="pv-ping" cx="300" cy="210" r="34" fill="#F2A03D" opacity=".5"></circle>
+<circle class="pv-ping pv-ping2" cx="300" cy="210" r="34" fill="#F2A03D" opacity=".5"></circle>
+</svg>
+<div style="position: absolute; left: 50%; top: 45.6%; transform: translate(-50%, -100%); pointer-events: none">
+<div class="pv-bob" style="display: flex; flex-direction: column; align-items: center">
+<div style="background: #0F2B46; color: #FFFFFF; border-radius: 18px; padding: 8px; display: flex; align-items: center; gap: 10px; box-shadow: 0 18px 36px -16px rgba(15,43,70,.7)">
+<img src="assets/logo.png" alt="" style="width: 44px; height: 44px; border-radius: 50%; display: block">
+<span style="display: flex; flex-direction: column; padding-right: 10px"><span style="font-weight: 800; font-size: 15px">Пінгві</span><span style="font-size: 12px; color: #C9DCEC">вул. Практична, 6</span></span>
+</div>
+<svg width="18" height="12" viewBox="0 0 18 12" aria-hidden="true"><path d="M0 0 L18 0 L9 12 Z" fill="#0F2B46"></path></svg>
+</div>
+</div>
+<span style="position: absolute; right: 18px; bottom: 18px; background: #FFFFFF; color: #0F2B46; border-radius: 999px; padding: 10px 18px; font-weight: 700; font-size: 14px; display: flex; align-items: center; gap: 8px; box-shadow: 0 10px 24px -14px rgba(15,43,70,.5)">Прокласти маршрут <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0F2B46" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"></path></svg></span>
+</a>
+</section>
+
+<footer style="background: #0F2B46; color: #C9DCEC; overflow: hidden">
+<div style="max-width: 1240px; margin: 0 auto; padding: 56px clamp(16px, 4vw, 28px) 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; font-size: 14px">
+<div style="display: flex; align-items: center; gap: 14px"><img src="assets/logo.png" alt="" style="width: 52px; height: 52px; border-radius: 50%; display: block"><span>© Дитячий садок «Пінгві», Київ</span></div>
+<div style="display: flex; flex-wrap: wrap; gap: 24px"><a href="tel:+380731641250" style="color: #FFFFFF; text-decoration: none; font-weight: 700">+380 73 164 12 50</a><a href="https://www.instagram.com/pinhvi.ua/" style="color: #FFFFFF; text-decoration: none; font-weight: 700">@pinhvi.ua</a></div>
+</div>
+<div class="pv-reveal" aria-hidden="true" style="font-family: 'Comfortaa', sans-serif; font-weight: 700; font-size: clamp(72px, 19vw, 290px); line-height: 1; letter-spacing: -4px; text-align: center; color: rgba(201,220,236,.09); padding: 0 0 40px">ПІНГВІ</div>
+</footer>
+
+<div class="pv-overlay" id="signup" hidden data-backdrop="" style="position: fixed; inset: 0; z-index: 100; background: rgba(15,43,70,.55); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; padding: 16px">
+<div class="pv-modal" role="dialog" aria-modal="true" aria-label="Запис на екскурсію" style="position: relative; width: 100%; max-width: 540px; max-height: calc(100vh - 32px); overflow-y: auto; box-sizing: border-box; background: #FFFFFF; border-radius: 34px; padding: 36px; box-shadow: 0 40px 90px -30px rgba(15,43,70,.6)">
+<button type="button" data-close-form="" aria-label="Закрити" class="pv-btn" style="position: absolute; right: 18px; top: 18px; width: 44px; height: 44px; border-radius: 50%; background: #EEF5FB; display: flex; align-items: center; justify-content: center">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F2B46" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+<div id="signup-form-wrap">
+<form id="signup-form" style="display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; align-items: center; gap: 14px; padding-right: 48px">
+<img src="assets/logo.png" alt="" style="width: 56px; height: 56px; border-radius: 50%; display: block">
+<div style="display: flex; flex-direction: column"><span style="font-family: 'Comfortaa', sans-serif; font-weight: 700; font-size: 26px; line-height: 1.15">Запис на екскурсію</span><span style="font-size: 14px; color: #3B5672">Зателефонуємо й узгодимо зручний час</span></div>
+</div>
+<label style="display: flex; flex-direction: column; gap: 6px; font-weight: 700; font-size: 14px">Ваше ім’я<input class="pv-in" type="text" name="parent" autocomplete="name" required placeholder="Як до вас звертатися"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-weight: 700; font-size: 14px">Телефон<input class="pv-in" type="tel" name="phone" autocomplete="tel" required placeholder="+380"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-weight: 700; font-size: 14px">Ім’я та вік дитини<input class="pv-in" type="text" name="child" placeholder="Наприклад: Марійка, 2 роки"></label>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-weight: 700; font-size: 14px">Група</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<button type="button" class="pv-pill" data-group="Молодша" aria-pressed="false" style="border: 1.5px solid #D4E5F2; background: #F7FBFE; color: #0F2B46">Молодша</button><button type="button" class="pv-pill" data-group="Старша" aria-pressed="false" style="border: 1.5px solid #D4E5F2; background: #F7FBFE; color: #0F2B46">Старша</button><button type="button" class="pv-pill" data-group="Ще не знаю" aria-pressed="false" style="border: 1.5px solid #D4E5F2; background: #F7FBFE; color: #0F2B46">Ще не знаю</button><input type="hidden" name="group" value="">
+</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="font-weight: 700; font-size: 14px">Зручний час для дзвінка</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<button type="button" class="pv-pill" data-time="Зранку" aria-pressed="false" style="border: 1.5px solid #D4E5F2; background: #F7FBFE; color: #0F2B46">Зранку</button><button type="button" class="pv-pill" data-time="Вдень" aria-pressed="false" style="border: 1.5px solid #D4E5F2; background: #F7FBFE; color: #0F2B46">Вдень</button><button type="button" class="pv-pill" data-time="Ввечері" aria-pressed="false" style="border: 1.5px solid #D4E5F2; background: #F7FBFE; color: #0F2B46">Ввечері</button><input type="hidden" name="time" value="">
+</div>
+</div>
+<label style="display: flex; flex-direction: column; gap: 6px; font-weight: 700; font-size: 14px">Коментар<textarea class="pv-in" name="comment" rows="3" placeholder="Питання про компенсацію, адаптацію чи щось інше" style="resize: vertical"></textarea></label>
+<button type="submit" class="pv-btn pv-btn-shine" style="display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 60px; border-radius: 999px; background: #F2A03D; color: #0F2B46; font-weight: 800; font-size: 17px">Надіслати заявку
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0F2B46" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+<span style="font-size: 13px; color: #3B5672; text-align: center">Або телефонуйте: <a href="tel:+380731641250" style="font-weight: 700">+380 73 164 12 50</a></span>
+</form>
+</div>
+<div id="signup-done" hidden>
+<div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px; padding: 24px 0 8px">
+<svg width="96" height="96" viewBox="0 0 96 96" aria-hidden="true"><circle cx="48" cy="48" r="46" fill="#E5F4EA"></circle><path class="pv-check" d="M30 49 L43 62 L67 36" fill="none" stroke="#2E9E5B" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<span style="font-family: 'Comfortaa', sans-serif; font-weight: 700; font-size: 30px; line-height: 1.15">Дякуємо, заявку прийнято!</span>
+<p style="margin: 0; color: #3B5672; max-width: 380px">Ми зателефонуємо, щоб узгодити день і час екскурсії. Чекаємо на знайомство в «Пінгві».</p>
+<button type="button" data-close-form="" class="pv-btn" style="min-height: 54px; padding: 0 30px; border-radius: 999px; background: #0F2B46; color: #FFFFFF; font-weight: 700; font-size: 16px">Повернутися на сайт</button>
+</div>
+</div>
+</div>
+</div>
+
+
+</div>
+<script>
+(function(){
+  var m=document.getElementById('signup'), wrap=document.getElementById('signup-form-wrap'), done=document.getElementById('signup-done'), form=document.getElementById('signup-form');
+  var ON='border: 1.5px solid #0F2B46; background: #0F2B46; color: #FFFFFF', OFF='border: 1.5px solid #D4E5F2; background: #F7FBFE; color: #0F2B46';
+  function pick(kind,val){
+    form.querySelectorAll('[data-'+kind+']').forEach(function(b){var on=b.getAttribute('data-'+kind)===val;b.setAttribute('style',on?ON:OFF);b.setAttribute('aria-pressed',on?'true':'false');});
+    form.querySelector('input[name="'+kind+'"]').value=val||'';
+  }
+  function open(group){wrap.hidden=false;done.hidden=true;if(group)pick('group',group);m.hidden=false;document.body.style.overflow='hidden';var f=form.querySelector('input');if(f)setTimeout(function(){f.focus();},300);}
+  function close(){m.hidden=true;document.body.style.overflow='';}
+  document.querySelectorAll('[data-open-form]').forEach(function(b){b.addEventListener('click',function(){open(b.getAttribute('data-open-form'));});});
+  m.querySelectorAll('[data-close-form]').forEach(function(b){b.addEventListener('click',close);});
+  m.addEventListener('click',function(e){if(e.target===m)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!m.hidden)close();});
+  form.querySelectorAll('[data-group]').forEach(function(b){b.addEventListener('click',function(){pick('group',b.getAttribute('data-group'));});});
+  form.querySelectorAll('[data-time]').forEach(function(b){b.addEventListener('click',function(){pick('time',b.getAttribute('data-time'));});});
+  form.addEventListener('submit',function(e){e.preventDefault();var endpoint=form.getAttribute('data-endpoint');
+    if(endpoint){fetch(endpoint,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(form)}).catch(function(){});}
+    wrap.hidden=true;done.hidden=false;form.reset();pick('group','');pick('time','');});
+})();
+</script>
+</body>
+</html>
